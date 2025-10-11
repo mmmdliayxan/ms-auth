@@ -52,8 +52,7 @@ tasks.named('test') {
 
 spotless {
     java {
-        importOrder()
         removeUnusedImports()
-        googleJavaFormat()
+        target 'src/**/*.java'
     }
 }
