@@ -4,7 +4,6 @@ import com.example.msauth.model.enums.Role;
 import com.example.msauth.model.enums.UserStatus;
 import lombok.Builder;
 import lombok.Data;
-import org.springframework.boot.autoconfigure.elasticsearch.ElasticsearchConnectionDetails;
 
 @Data
 @Builder
