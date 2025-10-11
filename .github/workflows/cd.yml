@@ -25,6 +25,9 @@ jobs:
           distribution: temurin
           java-version: 19
 
+      - name: Make Gradlew executable
+        run: chmod +x ./gradlew
+
       - name: Build project
         run: ./gradlew clean bootJar --no-daemon
 
