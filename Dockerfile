@@ -2,6 +2,6 @@ FROM eclipse-temurin:19-jdk
 
 WORKDIR /app
 
-COPY /app/build/libs/ms-auth-0.0.1-SNAPSHOT.jar app.jar
+COPY build/libs/ms-auth-0.0.1-SNAPSHOT.jar app.jar
 
 ENTRYPOINT ["java", "-jar", "app.jar"]
