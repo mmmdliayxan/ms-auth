@@ -22,6 +22,16 @@ public class UserService {
     private final UserMapper userMapper;
     private final BCryptPasswordEncoder passwordEncoder;
 
+    public UserResponse findById(Long id) {
+        log.info("Fetching user by id={}", id);
+        User user = userRepository.findById(id)
+                .orElseThrow(() -> {
+                    log.error("User not found with id={}", id);
+                    return new UserNotFoundException("User not found with id: " + id);
+                });
+        return userMapper.toResponse(user);
+    }
+
     public Boolean existUser(Long userId) {
         boolean exists = userRepository.existsById(userId);
         log.info("Checking if user with id={} exists: {}", userId, exists);

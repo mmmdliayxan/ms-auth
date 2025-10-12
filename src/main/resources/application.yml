@@ -1,16 +1,27 @@
+server:
+  port: 8081
+
 spring:
+  application:
+    name: ms-auth
+
   datasource:
     url: jdbc:postgresql://localhost:5432/userdb
     username: postgres
     password: password
     driver-class-name: org.postgresql.Driver
+
   jpa:
-    properties:
-      hibernate:
-        format_sql: false
-        show_sql: true
     hibernate:
       ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: false
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
 secretKey: U2ltcGx5IGVudGVyIHlvdXIgZGF0YSB0aGVuIHB1c2ggdGhlIGVuY29kZSBidXR0b24uU2ltcGx5IGVudGVyIHlvdXIgZGF0YSB0aGVuIHB1c2ggdGhlIGVuY29kZSBidXR0b24uU2ltcGx5IGVudGVyIHlvdXIgZGF0YSB0aGVuIHB1c2ggdGhlIGVuY29kZSBidXR0b24uCg==
-server:
-  port: 8081

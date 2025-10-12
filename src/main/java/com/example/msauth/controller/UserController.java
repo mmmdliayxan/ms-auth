@@ -26,6 +26,13 @@ public class UserController {
         return ResponseEntity.ok(userService.getProfile(email));
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<UserResponse> getUserById(@PathVariable Long id) {
+        log.info("Received request to get user by id={}", id);
+        UserResponse userResponse = userService.findById(id);
+        return ResponseEntity.ok(userResponse);
+    }
+
     @PutMapping("/{email}")
     @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public ResponseEntity<UserResponse> updateProfile(@PathVariable String email, @RequestBody UserRequest request) {
