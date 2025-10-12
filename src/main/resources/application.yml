@@ -6,7 +6,7 @@ spring:
     name: ms-auth
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/usersdb
+    url: jdbc:postgresql://shared-postgres:5432/usersdb
     username: postgres
     password: password
     driver-class-name: org.postgresql.Driver
