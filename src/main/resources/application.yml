@@ -23,6 +23,6 @@ springdoc:
   api-docs:
     path: /v3/api-docs
   swagger-ui:
-    server-url: ${SWAGGER_SERVER_URL:http://localhost:8080}
+    path: /swagger-ui.html
 
 secretKey: U2ltcGx5IGVudGVyIHlvdXIgZGF0YSB0aGVuIHB1c2ggdGhlIGVuY29kZSBidXR0b24uU2ltcGx5IGVudGVyIHlvdXIgZGF0YSB0aGVuIHB1c2ggdGhlIGVuY29kZSBidXR0b24uU2ltcGx5IGVudGVyIHlvdXIgZGF0YSB0aGVuIHB1c2ggdGhlIGVuY29kZSBidXR0b24uCg==
