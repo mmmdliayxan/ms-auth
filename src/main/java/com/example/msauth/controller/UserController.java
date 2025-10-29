@@ -27,6 +27,7 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
+    @PreAuthorize("hasAnyRole('ADMIN','USER')")
     public ResponseEntity<UserResponse> getUserById(@PathVariable Long id) {
         log.info("Received request to get user by id={}", id);
         UserResponse userResponse = userService.findById(id);
