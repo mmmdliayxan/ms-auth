@@ -19,14 +19,14 @@ public class UserController {
 
     private final UserService userService;
 
-    @GetMapping("/{email}")
+    @GetMapping("/byEmail/{email}")
     @PreAuthorize("hasAnyRole('ADMIN', 'USER')")
     public ResponseEntity<UserResponse> getProfile(@PathVariable String email) {
         log.info("Get profile for email={}", email);
         return ResponseEntity.ok(userService.getProfile(email));
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/byId/{id}")
     @PreAuthorize("hasAnyRole('ADMIN','USER')")
     public ResponseEntity<UserResponse> getUserById(@PathVariable Long id) {
         log.info("Received request to get user by id={}", id);
