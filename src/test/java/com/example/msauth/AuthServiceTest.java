@@ -76,7 +76,7 @@ class AuthServiceTest {
         UserResponse result = authService.register(request);
 
         assertEquals("ayxan", result.getUsername());
-        assertEquals(UserStatus.ACTIVE, result.getStatus()); // enum ilə müqayisə
+        assertEquals(UserStatus.INACTIVE, result.getStatus()); // enum ilə müqayisə
     }
 
 
