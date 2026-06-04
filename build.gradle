@@ -41,12 +41,16 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.mockito:mockito-core:5.11.0'
 
-    // Mockito JUnit Jupiter - @ExtendWith(MockitoExtension.class) istifadə edə bilmək üçün
-    testImplementation 'org.mockito:mockito-junit-jupiter:5.11.0'
+    // 1. JUnit 5 BOM (Bill of Materials) - Bütün JUnit komponentlərini eyni versiyada saxlayır
+    testImplementation platform('org.junit:junit-bom:5.10.2')
 
-    // JUnit 5-in işləməsi üçün mütləqdir
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.2'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.2'
+    // 2. Əsas Test Kitabxanaları (Versiya yazmırıq, yuxarıdakı platform özü tənzimləyir)
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation 'org.junit.platform:junit-platform-launcher'
+
+    // 3. Mockito Asılılıqları
+    testImplementation 'org.mockito:mockito-core:5.11.0'
+    testImplementation 'org.mockito:mockito-junit-jupiter:5.11.0'
 }
 
 tasks.named('test') {
