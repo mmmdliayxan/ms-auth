@@ -32,6 +32,8 @@ public class AuthService {
         User user = userRepository.findByUsername(request.getUsername())
                 .orElseThrow(() -> new RuntimeException("User not found"));
 
+        log.info("User is found");
+
         if (!passwordEncoder.matches(request.getPassword(), user.getPassword())) {
             log.error("Invalid password for user: {}", request.getUsername());
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid username or password");
