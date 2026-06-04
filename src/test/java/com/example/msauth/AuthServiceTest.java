@@ -13,7 +13,6 @@ import com.example.msauth.service.JwtService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.*;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -88,6 +87,9 @@ class AuthServiceTest {
 
         User existing = new User();
         existing.setUsername("ayxan");
+
+        // BURA BİLƏRƏKDƏN ARTIQ MOCK ƏLAVƏ EDİRİK (Bu metod bu testdə çağırılmır)
+        when(passwordEncoder.encode("password")).thenReturn("encodedPass");
 
         when(userRepository.findByUsername("ayxan")).thenReturn(Optional.of(existing));
 
